@@ -1,0 +1,60 @@
+.navbar{
+  background-color: #0dcaf0;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar .nav-form{
+  border-radius: 1rem;
+}
+
+.navbar .nav-form input{
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #333;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+.navbar .nav-form button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fbda00;
+  padding: 0.5rem;
+}
+
+.navbar .nav-form button i{
+  vertical-align: middle;
+}
+
+.nav-cart{
+  border: 1px solid white;
+}
+
+.nav-cart div{
+  color: white;
+  font-weight: bold;
+  padding: 0px 5px;
+}
+
+.nav-cart div i{
+  color: #fbda00;
+  position: relative;
+}
+
+.nav-cart div .badge{
+  color: #fbda00;
+  position: absolute;
+  font-size: 0.6rem;
+  top: 0;
+  left: 0;
+  transform: translate(100%, -60%);
+}
+
+.carousel img{
+  vertical-align: middle;
+}

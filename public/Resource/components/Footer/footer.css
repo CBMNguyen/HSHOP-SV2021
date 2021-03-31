@@ -1,0 +1,78 @@
+footer{
+  background-color: rgb(247, 247, 247);
+}
+
+footer .register{
+  align-items: center;
+}
+
+footer .register .icon img{
+  width: 160px;
+}
+
+footer .register .description{
+  padding: 0 40px;
+}
+
+footer .register h3{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+footer .register h5{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+footer .register input{
+  width: 250px;
+  margin-left: 35px;
+}
+
+footer .information{
+  padding: 40px 0;
+  background-color: white;
+}
+
+footer .information h6{
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  padding-top: 10px;
+}
+
+footer .information ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .information ul li{
+  font-size: 0.8rem;
+  line-height: 180%;
+}
+footer .information .hotline{
+   color: #bf081f;
+   font-weight: bold;
+   font-size: 0.9rem;
+}
+
+footer .information .download img{
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+footer .address{
+  background-color: white;
+}
+
+footer .address p{
+  padding: 50px;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+footer .copy-right{
+  background-color: white;
+  padding-bottom: 20px;
+}
