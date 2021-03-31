@@ -1,0 +1,10 @@
+@media(max-width:992px){
+  .nav-cart {
+    border: none;
+    text-align: center;
+}
+.nav-login{
+  text-align: center;
+  margin-right: 50px;
+}
+}

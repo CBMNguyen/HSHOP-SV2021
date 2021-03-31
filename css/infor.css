@@ -1,0 +1,246 @@
+
+.navbar{
+  background-color: #0dcaf0;;
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar .nav-form{
+  border-radius: 1rem;
+}
+
+.navbar .nav-form input{
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #333;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+.navbar .nav-form button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fbda00;
+  padding: 0.5rem;
+}
+
+.navbar .nav-form button i{
+  vertical-align: middle;
+}
+
+.nav-cart{
+  border: 1px solid white;
+}
+
+.nav-cart div{
+  padding: 0px 5px;
+}
+
+.nav-cart div i{
+  color: #fbda00;
+  position: relative;
+}
+
+.nav-cart div .badge{
+  color: #fbda00;
+  position: absolute;
+  font-size: 0.6rem;
+  top: 0;
+  left: 0;
+  transform: translate(100%, -60%);
+}
+
+.product-infor{
+  background-color: white;
+  padding: 20px;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #f8f9fa;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: transparent;
+  padding: 2px 16px;
+  color: rebeccapurple;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+.product-infor .container {
+  position: relative;
+}
+
+.product-infor ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-infor ul li{
+  border-bottom: 1px solid rgba(236, 233, 233, 0.4);
+  border-top: 1px solid rgba(236, 233, 233, 0.4);
+  padding: 10px 0;
+}
+
+.product-infor ul li a{
+  text-decoration: none;
+}
+
+.product-infor button{
+  background-image: -webkit-linear-gradient(top, rgb(245, 144, 0), rgb(253, 110, 29));
+  color: white;
+  padding: 0;
+}
+
+.product-infor button:hover{
+  color: white;
+}
+
+footer{
+  background-color: rgb(247, 247, 247);
+}
+
+footer .register{
+  align-items: center;
+}
+
+footer .register .icon img{
+  width: 160px;
+}
+
+footer .register .description{
+  padding: 0 40px;
+}
+
+footer .register h3{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+footer .register h5{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+footer .register input{
+  width: 250px;
+  margin-left: 35px;
+}
+
+footer .information{
+  padding: 40px 0;
+  background-color: white;
+}
+
+footer .information h6{
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  padding-top: 10px;
+}
+
+footer .information ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .information ul li{
+  font-size: 0.8rem;
+  line-height: 180%;
+}
+footer .information .hotline{
+   color: #bf081f;
+   font-weight: bold;
+   font-size: 0.9rem;
+}
+
+footer .information .download img{
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+footer .address{
+  background-color: white;
+}
+
+footer .address p{
+  padding: 50px;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+footer .copy-right{
+  background-color: white;
+  padding-bottom: 20px;
+}
