@@ -2,7 +2,10 @@
 
 body{
   font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5;
+  background-image: url(../../../img/orange-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: #313131;
   display: flex;
   justify-content: center;
@@ -10,13 +13,27 @@ body{
   height: 100vh;
 }
 
+.alert{
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  margin-right: 5px;
+}
+
+.alert button{
+  margin-left: 100px;
+}
+
 form{
-  width: 300px;
+  width: 400px;
   background-color: white;
   padding: 1rem 1.2rem;
   box-shadow: .4px 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   text-shadow: .4px .4px 5px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+  left: -400px;
 }
 
 form h2{

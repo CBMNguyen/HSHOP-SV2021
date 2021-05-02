@@ -2,9 +2,114 @@
   .nav-cart {
     border: none;
     text-align: center;
+  }
+  .nav-login{
+    text-align: center;
+    margin-right: 50px;
+  }
+
+  form .goods-btn{
+    width: 100%;
+  }
 }
-.nav-login{
-  text-align: center;
-  margin-right: 50px;
+
+@media(max-width: 1200px){
+  .news .title{
+    font-size: 10px;
+  }
+
+  .signup-form{
+    left: 0;
+  }
 }
+
+@media(max-width: 1000px){
+  .news img{
+    display: none;
+  }
+
+  .homenews .news a{
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .news .title{
+    display: none;
+  }
+
+  .option{
+    top: 30%;
+    left: 30%;
+  }
+
+  .overlay::after{
+    width: 100%;
+    height: 400%;
+  }
+}
+
+@media(max-width: 770px){
+  .option{
+    top: 30%;
+    left: 26%;
+  }
+
+  .overlay::after{
+    width: 100%;
+    height: 365%;
+  }
+}
+
+@media(max-width: 650px){
+  .option{
+    top: 30%;
+    left: 22%;
+  }
+
+  .overlay::after{
+    width: 100%;
+    height: 365%;
+  }
+}
+
+@media(max-width: 570px){
+  .option{
+    top: 30%;
+    left: 17%;
+  }
+
+  .overlay::after{
+    width: 100%;
+    height: 450%;
+  }
+}
+
+@media(max-width: 500px){
+  .homenews figure h6{
+    width: 100%;
+    padding: 5px 10px 8px 3px;
+  }
+
+  .homenews figure h6 a{
+    font-size: 10px;
+  }
+
+  .option{
+    width: 340px;
+    top: 30%;
+    left: 15%;
+  }
+}
+
+@media(max-width: 480px){
+  .option{
+    width: 340px;
+    top: 30%;
+    left: 10%;
+  }
+
+  .overlay::after{
+    width: 100%;
+    height: 450%;
+  }
 }

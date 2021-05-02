@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400;1,700&display=swap');
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(0deg,rgba(193, 200, 228,0.8),rgb(132, 206, 235,0.8), rgba(136, 96, 208, 0.8)),url(../img/orange-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #313131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.alert{
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  margin-right: 5px;
+}
+
+.alert button{
+  margin-left: 100px;
+}
+
+.signup-form{
+  width: 400px;
+  background-color: white;
+  padding: 1rem 1.2rem;
+  box-shadow: .4px 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  text-shadow: .4px .4px 5px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+  left: -400px;
+}
+
+.signup-form h2{
+  text-align: center;
+  font-weight: 400;
+  user-select: none;
+}
+
+.signup-form input{
+  width: 100%;
+  font-size: 14px;
+  margin: 5px auto;
+  display: block;
+  border: none;
+  color: #333;
+  border-bottom: 1px solid dodgerblue;
+  outline: none;
+  padding: 6px 4px;
+}
+
+.input-group{
+  margin: 1.6rem 0;
+  position: relative;
+}
+
+.input-group label{
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  font-weight: 400;
+  font-size: 15px;
+  pointer-events: none;
+  color: gray;
+  transition: all 0.25px ease-in-out 0s;
+}
+
+input:focus + label, input:valid + label{
+  top: -14px;
+  left: 0px;
+  font-size: 13px;
+  color: dodgerblue;
+}
+
+.signup-form button{
+  background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+  padding: .5rem 1rem;
+  border: none;
+  color: white;
+  border-radius: 2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.25px ease-in-out 0s;
+  box-shadow: .2px 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.signup-form p{
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 2rem;
+}
+
+.signup-form p a{
+  font-size: 1rem;
+  color: inherit;
+  font-weight: 500;
+}

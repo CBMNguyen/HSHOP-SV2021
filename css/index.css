@@ -1,6 +1,17 @@
+.overlay::after{
+  content: " ";
+  display: block;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vw;
+  background-color: rgba(31, 36, 46, 0.8);
+  z-index: 1;
+}
 
 .navbar{
-  background-color: #0dcaf0;;
+  background-color: #0dcaf0;
 }
 
 .navbar a{
@@ -37,6 +48,8 @@
 }
 
 .nav-cart div{
+  color: white;
+  font-weight: bold;
   padding: 0px 5px;
 }
 
@@ -54,9 +67,62 @@
   transform: translate(100%, -60%);
 }
 
+.nav-cart div{
+  padding: 0px 5px;
+}
+
+.nav-cart div i{
+  color: #fbda00;
+  position: relative;
+}
+
+.nav-cart div .badge{
+  color: #fbda00;
+  position: absolute;
+  font-size: 0.6rem;
+  top: 0;
+  left: 0;
+  transform: translate(100%, -60%);
+}
+
+.cart:hover .showCart{
+  display: block;
+}
+
+.showCart:hover{
+  display: block;
+}
+
+.showCart{
+  width: 380px;
+  background-color: #fff;
+  width: 360px;
+  font-size: 0.8rem;
+  position: absolute;
+  margin-top: 6px;
+  padding: 5px;
+  z-index: 1;
+  display: none;
+}
+
+.showCart .product-item{
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+}
+
 .product-infor{
   background-color: white;
   padding: 20px;
+}
+
+.option{
+  width: 380px;
+  display: none;
+  background-color: #fff;
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  z-index: 2;
 }
 
 .mySlides {
@@ -140,19 +206,19 @@
   position: relative;
 }
 
-.product-infor ul{
+.product-infor .list-infor{
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.product-infor ul li{
+.product-infor .list-infor li{
   border-bottom: 1px solid rgba(236, 233, 233, 0.4);
   border-top: 1px solid rgba(236, 233, 233, 0.4);
   padding: 10px 0;
 }
 
-.product-infor ul li a{
+.product-infor .list-infor li a{
   text-decoration: none;
 }
 
@@ -164,6 +230,51 @@
 
 .product-infor button:hover{
   color: white;
+}
+
+.promotion{
+  font-size: 14px;
+}
+
+.promotion i{
+  color: #3fb846;
+}
+
+.promotion ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ededed;
+  padding: 10px;
+}
+
+.promotion ul li{
+  margin-bottom: 5px;
+}
+
+.promotion .title{
+  background-color: #f6f6f6;
+  border: 1px solid #ededed;
+  padding: 10px;
+}
+
+.promotion .title h6{
+  margin: 0;
+  color: #333;
+}
+
+.promotion .sub-infor{
+  list-style-type: disc;
+  border: none;
+  margin-left: 25px;
+}
+
+.promotion .sub-infor li:first-child strong{
+  color: #e3230c;
+}
+
+.promotion .sub-infor li:last-child span{
+  color: #333;
 }
 
 footer{
@@ -219,6 +330,26 @@ footer .information ul li{
   font-size: 0.8rem;
   line-height: 180%;
 }
+
+footer ul li{
+  transition: all 0.35s ease-in-out 0s;
+}
+
+footer ul li:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  color: blue;
+}
+
+footer .img-hover img{
+  transition: all 0.35s ease-in-out 0s;
+}
+
+footer .img-hover img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 footer .information .hotline{
    color: #bf081f;
    font-weight: bold;
