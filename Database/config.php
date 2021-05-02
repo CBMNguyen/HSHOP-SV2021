@@ -1,9 +1,14 @@
 <?php
 
-const HOST = 'localhost';
-const USERNAME = 'root';
-const PASSWORD = '';
-const DATABASE = 'Quanlydathang';
+// const HOST = 'localhost';
+// const USERNAME = 'root';
+// const PASSWORD = '';
+// const DATABASE = 'Quanlydathang';
+
+const HOST = 'remotemysql.com';
+const USERNAME = 'nRZCFRiu5m';
+const PASSWORD = '7LRGaFg8wg';
+const DATABASE = 'ip_db';
 
 //insert update delete
 
