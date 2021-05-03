@@ -8,7 +8,7 @@
 const HOST = 'remotemysql.com';
 const USERNAME = 'nRZCFRiu5m';
 const PASSWORD = '7LRGaFg8wg';
-const DATABASE = 'ip_db';
+const DATABASE = 'iphone_db';
 
 //insert update delete
 
