@@ -135,6 +135,8 @@
                 $orderDetail = executeResult($orderDetailSql);
                 $userSql = 'select * from khachhang where MSKH = "'.$order['MSKH'].'"';
                 $User = executeResultOne($userSql);
+                $userAddressSql = 'select DiaChi from diachikh where MSKH = "'.$User['MSKH'].'"';
+                $userAddress = executeResultOne($userAddressSql);
 
                 $stateColor = "text-secondary";
                 if($order['trangthai'] === 'Đã xác nhận'){
@@ -155,7 +157,7 @@
                       <div>'.$User['HoTenKH'].'</div>
                       <div>'.$User['Email'].'</div>
                       <div>'.$User['SoDienThoai'].'</div>
-                      <div>'.$User['DiaChi'].'</div>
+                      <div>'.$userAddress['DiaChi'].'</div>
                       <div class="position-absolute state p-1 pe-2 '.$stateColor.' ">'.$order['trangthai'].'</div>
                     </div>
                   </li>';

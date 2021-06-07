@@ -187,11 +187,11 @@
       }
 
       .cart:hover .showCart{
-        opacity: 1;
+        display: block;
       }
 
       .showCart:hover{
-        opacity: 1;
+        display: block;
       }
 
       .showCart{
@@ -200,10 +200,11 @@
         width: 360px;
         font-size: 0.8rem;
         position: absolute;
+        top: 45px;
         margin-top: 6px;
         padding: 5px;
         z-index: 2;
-        opacity: 0;
+        display:none;
         transition: all 0.45s ease-in-out 0s;
       }
 
@@ -230,6 +231,7 @@
       .nav-login h6{
         font-size: 18px;
       }
+
     </style>
   </head>
 
@@ -264,7 +266,7 @@
                 />
                 <button type="submit"><i class="fas fa-search fa-lg"></i></button>
               </form>
-              <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+              <ul class="navbar-nav me-0 mb-2 mb-lg-0 d-flex">
                 <li class="nav-item me-5 position-relative cart">
                   <a
                       class="nav-link nav-cart active mt-2"
@@ -342,15 +344,15 @@
                             ';
                             }else{
                               echo '
-                                <div class="d-flex align-items-center mb-2 product-item pb-2">
-                                <div class="text-success m-auto">🎉Giỏ hàng rỗng...🎉</div> 
+                                <div class="d-flex align-items-center product-item">
+                                <div class="text-success m-auto p-0 m-0">🎉Giỏ hàng rỗng...🎉</div> 
                                 </div>
                               ';
                             }
                           }
                         }else{
                           echo '
-                            <div class="d-flex align-items-center mb-2 product-item pb-2">
+                            <div class="d-flex align-items-center mb-2 product-item">
                             <div class="text-success m-auto">🎉Giỏ hàng rỗng...🎉</div> 
                             </div>
                           ';
@@ -383,7 +385,7 @@
                       echo '
                       <img class="rounded-circle border border-secondary" src="'.$User['Image'].'" alt="person" width="32px" height="32px">
                       <h6 class="text-light d-inline-block m-0 p-0">'.preg_split("/@/",$_SESSION['email'])[0].'</h6></a>
-                      <ul class="dropdown-menu w-25 position-absolute p-0 m-0" aria-labelledby="navbarDropdown">
+                      <ul class="dropdown-menu w-25 position-absolute a p-0 m-0" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item text-dark" href="/Resource/inforPer.php?MSKH='.$User['MSKH'].'"><i class="fas fa-user-cog"></i> Personal</a></li>
                       <li><a class="dropdown-item text-dark" href="/Resource/Order/"><i class="fas fa-cart-arrow-down"></i> Order Detail</a></li>
                       '.$mode.'
@@ -608,7 +610,7 @@
     <!-- =====================Footer=================== -->
 
     <footer>
-      <div class="container d-block d-lg-flex register">
+      <div class="container d-block d-lg-flex register pb-1">
         <div class="icon">
           <img src="./img/newsletter.png" alt="letter-icon" />
         </div>
@@ -616,7 +618,7 @@
           <h3>Đăng kí nhận bản tin H✨Apple</h3>
           <h5>Đừng bỏ lỡ sản phẩm hấp dẫn và chương trình siêu hấp dẫn🎁</h5>
         </div>
-        <div class="register-input d-flex">
+        <div class="register-input d-flex pb-1">
           <div>
             <input
               type="email"
@@ -624,7 +626,7 @@
               placeholder="Địa chỉ email của bạn"
             />
           </div>
-          <button type="submit" class="btn btn-primary ms-2">SignUp</button>
+          <button type="submit" class="btn btn-sm btn-primary ms-2">SignUp</button>
         </div>
       </div>
       <section class="information">

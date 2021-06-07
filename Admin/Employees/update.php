@@ -39,7 +39,7 @@
       $oldEmail = executeResultOne($oldEmailSql);
 
       if(empty($oldPhone) && empty($oldEmail)){
-        $sql = 'insert into nhanvien values ("", "'.$name.'", "'.$position.'", "'.$address.'", "'.$phone.'", "hshop_bm" ,"'.$salary.'", "'.$email.'")';
+        $sql = 'insert into nhanvien values ("", "'.$name.'", "'.$position.'", "'.$address.'", "'.$phone.'" ,"'.$salary.'", "'.$email.'")';
         execute($sql);
         header('location: /Resource/Admin/Employees');
         die();
@@ -96,7 +96,7 @@
 
           if((empty($oldEmail) || !empty($yourEmail))){
             $sql = 'update nhanvien set HoTenNV = "'.$newName.'", ChucVu="'.$newPosition.'", 
-            DiaChi="'.$newAddress.'", SoDienThoai="'.$newPhone.'",PassWord="'.$isEmployed['PassWord'].'",Luong="'.$newSalary.'",
+            DiaChi="'.$newAddress.'", SoDienThoai="'.$newPhone.'",Luong="'.$newSalary.'",
             Email="'.$newEmail.'" 
             where MSNV = "'.$isEmployed['MSNV'].'"';
             execute($sql);

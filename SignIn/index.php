@@ -77,7 +77,7 @@
     />
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="./index.css" />
-    <title>Login</title>
+    <title>H-Apple | Login</title>
   </head>
 
   <body>

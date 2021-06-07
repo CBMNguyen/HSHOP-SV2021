@@ -32,9 +32,16 @@
     $checkEmailCustomer = executeResultOne($sqlCustomer);
     $sqlPhoneCustomer = 'select * from khachhang where SoDienThoai = "'.$phone.'"';
     $checkPhoneCustomer = executeResultOne($sqlPhoneCustomer);
-    if(empty($checkEmailCustomer) && empty($checkPhoneCustomer) && $password === $rpassword){
-      $sqlInsert = 'INSERT INTO khachhang VALUES ("", "'.$name.'", "", "'.$address.'", "'.$phone.'", "'.$email.'", "'.md5($password).'")';
+    if(!isset($checkEmailCustomer) && !isset($checkPhoneCustomer) && $password === $rpassword){
+      $sqlInsert = 'INSERT INTO khachhang VALUES ("", "'.$name.'", "", "'.$phone.'", "'.$email.'", "'.md5($password).'", "./img/person.jpg")';
+      echo $sqlInsert;
       execute($sqlInsert);
+      // add user address
+        $findUserSql = 'select MSKH from khachhang where Email = "'.$email.'"';
+        $findMSKH = executeResultOne($findUserSql);
+        $insertAddressSql = 'INSERT INTO diachikh VALUES ("", "'.$address.'", '.$findMSKH['MSKH'].')';
+        execute($insertAddressSql);
+      // =============================================================================================
       header('location: /Resource/SignIn');
       die();
     }
@@ -83,7 +90,7 @@
     <link rel="stylesheet" href="../../main.css" />
     <link rel="stylesheet" href="./signup.css" />
     <link rel="stylesheet" href="../css/query.css" />
-    <title>Sign Up</title>
+    <title>H-Apple | Sign Up</title>
   </head>
 
   <body>

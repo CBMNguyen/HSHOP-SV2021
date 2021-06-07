@@ -46,6 +46,12 @@
     width: 100%;
     height: 400%;
   }
+
+  .showCart{
+    position: absolute;
+    top: 30px !important;
+  }
+
 }
 
 @media(max-width: 770px){
@@ -112,4 +118,5 @@
     width: 100%;
     height: 450%;
   }
+
 }

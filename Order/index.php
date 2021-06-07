@@ -7,6 +7,8 @@
     if(isset($_SESSION['email']) && isset($_SESSION['product'])){
       $userSql = 'select * from khachhang where Email = "'.$_SESSION['email'].'"';
       $User = executeResultOne($userSql);
+      $userAddressSql = 'select DiaChi from diachikh where MSKH = "'.$User['MSKH'].'"';
+      $userAddress = executeResultOne($userAddressSql);
       $findOrderSql = 'select * from dathang where MSKH = "'.$User['MSKH'].'" and trangthai != "Đã Giao"';
       $orderId = executeResult($findOrderSql);
     }
@@ -14,7 +16,7 @@
 
   if(!empty($_POST)){
     if(isset($_POST['data'])){
-      $updateSql = 'update dathang set trangthai = "Đã giao" where SoDonDH = "'.$_POST['data'].'"';
+      $updateSql = 'update dathang set trangthai = "Đã giao", NgayGH = "'.date("Y-m-d").'" where SoDonDH = "'.$_POST['data'].'"';
       execute($updateSql);
     }
   }
@@ -96,7 +98,7 @@
     />
     <link rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="./css/query.css" />
+    <link rel="stylesheet" href="../css/query.css" />
     <link
       href="../font-awesome/fontawesome-free-5.15.3-web/css/all.min.css"
       rel="stylesheet"
@@ -154,6 +156,7 @@
         background-color: rgb(247, 247, 247);
         font-weight: 400;
       }
+
     </style>
   </head>
   <body>
@@ -263,8 +266,8 @@
                             ';
                             }else{
                               echo '
-                                <div class="d-flex align-items-center mb-2 product-item pb-2">
-                                <div class="text-success m-auto">🎉Giỏ hàng rỗng...🎉</div> 
+                                <div class="d-flex align-items-center product-item">
+                                <div class="text-success m-auto p-0 m-0">🎉Giỏ hàng rỗng...🎉</div> 
                                 </div>
                               ';
                             }
@@ -328,34 +331,32 @@
         if(!empty($_SESSION)){
           if(isset($_SESSION['email'])){
             echo '
-              <ul class="list-group list-group-flush w-25 me-5 p-0 infor" height="100px">
+              <ul class="list-group list-group-flush d-none d-sm-block me-5 p-0 infor" height="100px">
                 <li class="list-group-item"><h5 class="text-white text-center">Thông tin cá nhân</h5></li>
                 <li class="list-group-item">Họ và Tên: '.$User['HoTenKH'].'</li>
                 <li class="list-group-item">Số điện thoại: '.$User['SoDienThoai'].'</li>
                 <li class="list-group-item">Email: '.$User['Email'].'</li>
-                <li class="list-group-item">Địa chỉ: '.$User['DiaChi'].'</li>
+                <li class="list-group-item">Địa chỉ: '.$userAddress['DiaChi'].'</li>
               </ul>
         ';
           }
         }
       ?>
-        <ul class="list-group list-group-flush w-75 m-0 bill shadow p-1 bg-info rounded">
+        <ul class="list-group list-group-flush m-0 w-100 bill shadow p-1 bg-info rounded">
           <?php
             $count = 1;
             if(!empty($orderId)){
               foreach($orderId as $order){
                 $disable = '';
+                $confirm = '';
                 $orderDetailSql = 'select * from chitietdathang where SoDonDH = "'.$order['SoDonDH'].'"';
                 $orderDetail = executeResult($orderDetailSql);
 
                 if($order['trangthai'] === 'Đã xác nhận'){
                   $disable = 'disabled';
-                }
-
-                $confirm = '';
-                if($order['NgayGH'] <= date("Y-m-d")){
                   $confirm = '<a onclick="Confirm('.$order['SoDonDH'].')" class = "btn btn-sm btn-success d-inline-block text-white">Đã giao</a>';
                 }
+
 
                 echo '<li class="list-group-item fw-bold">Đơn hàng thứ '.$count++.':</li>';
                 foreach($orderDetail as $product){
@@ -404,7 +405,7 @@
             <h3>Đăng kí nhận bản tin H✨Apple</h3>
             <h5>Đừng bỏ lỡ sản phẩm hấp dẫn và chương trình siêu hấp dẫn🎁</h5>
           </div>
-          <div class="register-input d-flex">
+          <div class="register-input d-flex pb-1">
             <div>
               <input
                 type="email"
@@ -412,7 +413,7 @@
                 placeholder="Địa chỉ email của bạn"
               />
             </div>
-            <button type="submit" class="btn btn-primary ms-2">SignUp</button>
+            <button type="submit" class="btn btn-sm btn-primary ms-2">SignUp</button>
           </div>
         </div>
         <section class="information">

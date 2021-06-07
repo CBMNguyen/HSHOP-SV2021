@@ -121,12 +121,14 @@
               $sql = 'select * from khachhang';
               $result = executeResult($sql);
               foreach($result as $person){
+                $userAddressSql = 'select DiaChi from diachikh where MSKH = "'.$person['MSKH'].'"';
+                $userAddress = executeResultOne($userAddressSql);
                 echo '
                   <tr>
                     <td class="a">'.$person['MSKH'].'</td>
                     <td>'.$person['HoTenKH'].'</td>
                     <td>'.$person['TenCongTy'].'</td>
-                    <td>'.$person['DiaChi'].'</td>
+                    <td>'.$userAddress['DiaChi'].'</td>
                     <td>'.$person['SoDienThoai'].'</td>
                     <td>'.$person['Email'].'</td>
                     <td>

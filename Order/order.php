@@ -16,8 +16,9 @@ if(!empty($_POST)){
         $priceSql = 'select * from hanghoa where MSHH = "'.$product[0].'"';
         $price = executeResultOne($priceSql);
         $orderDetail = 'insert into chitietdathang values ("'.$amountOrder['amount'].'", "'.$product[0].'", "'.$product[1].'", "'.$price['GiamGia']*(int)$product[1].'", "0")';
-        $updateAmount = 'update hanghoa set SoLuongHang = '.(int)$price['SoLuongHang'] - (int)$product[1] .' where MSHH = "'.$product[0].'"';
-        execute($updateAmount);
+        // $updateAmount = 'update hanghoa set SoLuongHang = '.(int)$price['SoLuongHang'] - (int)$product[1] .' where MSHH = "'.$product[0].'"'; 
+        // use Trigger replace hardcore
+        // execute($updateAmount);
         execute($orderDetail);
       }
     }

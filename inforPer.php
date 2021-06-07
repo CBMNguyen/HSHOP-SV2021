@@ -5,11 +5,13 @@
   $checkTypeFile = true;
   $checkSelectFile = true;
   $image = './img/person.jpg';
+
   if(!empty($_GET)){
 
     $checkSql = 'select * from khachhang where MSKH = "'.$_GET['MSKH'].'"';
     $isCustomer = executeResultOne($checkSql);
-    
+    $userAddressSql = 'select DiaChi from diachikh where MSKH = "'.$_GET['MSKH'].'"';
+    $userAddress = executeResultOne($userAddressSql);
     if(empty($isCustomer) || !isset($_SESSION['email'])){
       require_once('./NotFound/index.php');
       die();
@@ -17,7 +19,7 @@
       $MSKH = $isCustomer['MSKH'];
       $name = $isCustomer['HoTenKH'];
       $company = $isCustomer['TenCongTy'];
-      $address = $isCustomer['DiaChi'];
+      $address = $userAddress['DiaChi'];
       $phone = $isCustomer['SoDienThoai'];
       $email = $isCustomer['Email'];
       $password = $isCustomer['PassWord'];
@@ -81,13 +83,15 @@
                 </div>';
           }else if((empty($oldEmail) || !empty($yourEmail))){
             $sql = 'update khachhang set HoTenKH = "'.$newName.'", TenCongTy="'.$newcompany.'", 
-            DiaChi="'.$newAddress.'", SoDienThoai="'.$newPhone.'", Email = "'.$newemail.'" ,PassWord="'.$isCustomer['PassWord'].'"
+            SoDienThoai="'.$newPhone.'", Email = "'.$newemail.'" ,PassWord="'.$isCustomer['PassWord'].'"
             where MSKH = "'.$isCustomer['MSKH'].'"';
+            $updateAdressSql = 'update diachikh set DiaChi = "'.$newAddress.'" where MSKH = "'.$isCustomer['MSKH'].'"';
             if($checkSelectFile){
               $sqlImage = 'update khachhang set Image = "'.$image_url.'" where MSKH = "'.$MSKH.'"';
               execute($sqlImage);
             }
             execute($sql);
+            execute($updateAdressSql);
             header("Refresh:0");
           }
         }
@@ -120,6 +124,9 @@
           }
       }
     }
+  }else{
+    require_once('./NotFound/index.php');
+    die();
   }
 ?>
 
@@ -322,8 +329,8 @@
                             ';
                             }else{
                               echo '
-                                <div class="d-flex align-items-center mb-2 product-item pb-2">
-                                <div class="text-success m-auto">🎉Giỏ hàng rỗng...🎉</div> 
+                                <div class="d-flex align-items-center product-item">
+                                <div class="text-success m-auto p-0 m-0">🎉Giỏ hàng rỗng...🎉</div> 
                                 </div>
                               ';
                             }
@@ -385,8 +392,8 @@
     <!-- ====================Personal================== -->
 
     <div class="container mt-1 mb-5 d-flex">
-        <div class="w-50 img-fluid"><img src="<?=$image?>" alt="person" class="rounded-circle border shadow-lg bg-info rounded" width="300px" height="300px"></div>
-        <form enctype="multipart/form-data" class="shadow p-3 bg-body rounded w-50" method="POST">
+        <div class="img-fluid d-none d-md-block w-75"><img src="<?=$image?>" alt="person" class="rounded-circle border shadow-lg bg-info rounded" width="300px" height="300px"></div>
+        <form enctype="multipart/form-data" class="shadow p-2 bg-body rounded w-100 m-auto" method="POST">
           
           <div><h3 class="bg-info text-light text-center p-2">Thông tin cá nhân</h3></div>
           
@@ -448,7 +455,7 @@
           <h3>Đăng kí nhận bản tin H✨Apple</h3>
           <h5>Đừng bỏ lỡ sản phẩm hấp dẫn và chương trình siêu hấp dẫn🎁</h5>
         </div>
-        <div class="register-input d-flex">
+        <div class="register-input d-flex pb-1">
           <div>
             <input
               type="email"
@@ -456,7 +463,7 @@
               placeholder="Địa chỉ email của bạn"
             />
           </div>
-          <button type="submit" class="btn btn-primary ms-2">SignUp</button>
+          <button type="submit" class="btn btn-sm btn-primary ms-2">SignUp</button>
         </div>
       </div>
       <section class="information">

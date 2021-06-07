@@ -2,15 +2,17 @@
   require_once('../Database/config.php');
   if(!empty($_POST)){
     if(isset($_POST['data'])){
-      $findAmountSql = 'select * from chitietdathang where SoDonDH = '.$_POST['data'].'';
-      $result = executeResult($findAmountSql);
+      // $findAmountSql = 'select * from chitietdathang where SoDonDH = '.$_POST['data'].'';
+      // $result = executeResult($findAmountSql);
       
-      foreach($result as $amount){
-        $currentGoodsSql = 'select * from hanghoa where MSHH = "'.$amount['MSHH'].'"';
-        $currentGoods = executeResultOne($currentGoodsSql);
-        $updateAmount = 'update hanghoa set SoLuongHang = '.(int)$currentGoods['SoLuongHang'] + (int)$amount['SoLuong'].' where MSHH = "'.$amount['MSHH'].'"';
-        execute($updateAmount);
-      }
+      // foreach($result as $amount){
+      //   $currentGoodsSql = 'select * from hanghoa where MSHH = "'.$amount['MSHH'].'"';
+      //   $currentGoods = executeResultOne($currentGoodsSql);
+      //   $updateAmount = 'update hanghoa set SoLuongHang = '.(int)$currentGoods['SoLuongHang'] + (int)$amount['SoLuong'].' where MSHH = "'.$amount['MSHH'].'"';
+      //   execute($updateAmount);
+      // }
+      
+      // use Trigger replace hardcore
 
       $sql = 'delete from chitietdathang where SoDonDH = '.$_POST['data'].'';
       execute($sql);

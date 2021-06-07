@@ -3,6 +3,8 @@
   require_once('./Database/config.php');
   if(empty($_SESSION)){
     $_SESSION['product'] = [];
+    $_SESSION['isNightMode'] = 0;
+    $_POST = [];
   }
 
   $MSHH = '';
@@ -275,15 +277,15 @@
                             ';
                             }else{
                               echo '
-                                <div class="d-flex align-items-center mb-2 product-item pb-2">
-                                <div class="text-success m-auto">🎉Giỏ hàng rỗng...🎉</div> 
+                                <div class="d-flex align-items-center product-item">
+                                <div class="text-success m-auto p-0 m-0">🎉Giỏ hàng rỗng...🎉</div> 
                                 </div>
                               ';
                             }
                           }
                         }else{
                           echo '
-                            <div class="d-flex align-items-center mb-2 product-item pb-2">
+                            <div class="d-flex align-items-center mb-2 product-item">
                             <div class="text-success m-auto">🎉Giỏ hàng rỗng...🎉</div> 
                             </div>
                           ';
@@ -623,7 +625,7 @@
             <h3>Đăng kí nhận bản tin H✨Apple</h3>
             <h5>Đừng bỏ lỡ sản phẩm hấp dẫn và chương trình siêu hấp dẫn🎁</h5>
           </div>
-          <div class="register-input d-flex">
+          <div class="register-input d-flex pb-1">
             <div>
               <input
                 type="email"
@@ -631,7 +633,7 @@
                 placeholder="Địa chỉ email của bạn"
               />
             </div>
-            <button type="submit" class="btn btn-primary ms-2">SignUp</button>
+            <button type="submit" class="btn btn-sm btn-primary ms-2">SignUp</button>
           </div>
         </div>
         <section class="information">
@@ -837,11 +839,13 @@
       function addToCart(){
         $('.option').show();
         $('.wrapper').addClass('overlay');
+        $('body').css('overflow','hidden');
       }
 
       function exit(){
         $('.option').hide();
         $('.wrapper').removeClass('overlay');
+        $('body').css('overflow','auto');
       }
 
       function orderProduct(MSHH){
